@@ -1,7 +1,6 @@
 return {
   {
     "vhyrro/luarocks.nvim",
-    event = "BufEnter *.http",
     config = true,
     opts = {
       rocks = { "lua-curl", "nvim-nio", "mimetypes", "xml2lua" },
