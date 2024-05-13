@@ -13,8 +13,8 @@ vim.keymap.del("n", "<leader>|")
 
 vim.keymap.set("n", "<leader>Ww", "<C-W>p", { desc = "Other window", remap = true })
 vim.keymap.set("n", "<leader>Wd", "<C-W>c", { desc = "Delete window", remap = true })
-vim.keymap.set("n", "<leader>W-", "<C-W>s", { desc = "Split window below", remap = true })
-vim.keymap.set("n", "<leader>W|", "<C-W>v", { desc = "Split window right", remap = true })
+vim.keymap.set("n", "<leader>Wj", "<C-W>s", { desc = "Split window below", remap = true })
+vim.keymap.set("n", "<leader>Wl", "<C-W>v", { desc = "Split window right", remap = true })
 
 -- Save buffer with <leader>w
 vim.keymap.del({ "i", "x", "n", "s" }, "<C-s>")
