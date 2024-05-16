@@ -17,22 +17,22 @@ return {
     end,
     keys = {
       {
-        "<leader>rr",
+        "<leader>Rr",
         "<cmd>Rest run<cr>",
         desc = "Run request under the cursor",
       },
       {
-        "<leader>rl",
+        "<leader>Rl",
         "<cmd>Rest run last<cr>",
         desc = "Re-run latest request",
       },
       {
-        "<leader>re",
+        "<leader>Re",
         "<cmd>:Telescope rest select_env<cr>",
         desc = "Select environment",
       },
       {
-        "<leader>rp",
+        "<leader>Rp",
         "<cmd>Rest run preview<cr>",
         desc = "Preview request under the cursor",
       },
