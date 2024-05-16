@@ -14,6 +14,10 @@ cmd + ralt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 cmd + ralt - m : yabai -m window --toggle zoom-fullscreen
 cmd + ralt - e : yabai -m space --balance
 
+# change layout of desktop
+cmd + ralt - z : yabai -m space --layout bsp
+cmd + ralt - x : yabai -m space --layout float
+
 # swap windows
 cmd + ralt - j : yabai -m window --swap south
 cmd + ralt - k : yabai -m window --swap north

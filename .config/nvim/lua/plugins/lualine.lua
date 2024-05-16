@@ -37,7 +37,7 @@ return {
     table.insert(opts.sections.lualine_x, 2, {
       "rest",
       icon = "",
-      fg = "#428890"
+      fg = "#428890",
     })
   end,
 }

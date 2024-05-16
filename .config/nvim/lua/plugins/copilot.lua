@@ -29,11 +29,14 @@ return {
   build = ":Copilot auth",
   event = "InsertEnter",
   opts = {
-    suggestion = { enabled = false, auto_trigger = true, keymap = { accept = "<M-l>" }, debounce = 75 },
+    suggestion = { enabled = true, auto_trigger = true, keymap = { accept = "<M-CR>" }, debounce = 75 },
     panel = { enabled = false },
     filetypes = {
       markdown = true,
       help = true,
+    },
+    experimental = {
+      ghost_text = true,
     },
   },
 }
