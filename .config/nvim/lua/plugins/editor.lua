@@ -22,7 +22,6 @@ return {
         "xml",
         "http",
         "json",
-        "graphql",
       })
     end,
   },
@@ -87,6 +86,8 @@ return {
       opts.sorting.comparators = vim.tbl_extend("force", opts.sorting.comparators, {
         require("copilot_cmp.comparators").prioritize,
       })
+
+      opts.experimental.ghost_text = false
 
       -- opts.mapping = vim.tbl_extend("force", opts.mapping, {
       --   ["<CR>"] = cmp.mapping.confirm({ select = false }),
