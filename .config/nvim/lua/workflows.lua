@@ -27,9 +27,9 @@ vim.keymap.set("n", "<leader>oo", ":cd $OBSIDIAN_VAULT<cr>", { desc = "Open Vaul
 -- convert note to template and remove leading white space
 vim.keymap.set(
   "n",
-  "<leader>on",
+  "<leader>ot",
   ":ObsidianTemplate note<cr> :lua vim.cmd([[1,/^\\S/s/^\\n\\{1,}//]])<cr>",
-  { desc = "Template" }
+  { desc = "Add Template" }
 )
 -- strip date from note title and replace dashes with spaces
 -- must have cursor on title
@@ -48,6 +48,9 @@ vim.keymap.set(
   ':Telescope live_grep search_dirs={"$OBSIDIAN_VAULT/notes"}<cr>',
   { desc = "Search in files" }
 )
+
+-- create new note
+vim.keymap.set("n", "<leader>on", ":ObsidianNew<cr>", { desc = "New Note" })
 
 --
 -- for review workflow
