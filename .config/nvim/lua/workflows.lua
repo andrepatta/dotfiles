@@ -49,9 +49,6 @@ vim.keymap.set(
   { desc = "Search in files" }
 )
 
--- create new note
-vim.keymap.set("n", "<leader>on", ":ObsidianNew<cr>", { desc = "New Note" })
-
 --
 -- for review workflow
 -- move file in current buffer to zettelkasten folder
