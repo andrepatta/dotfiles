@@ -34,6 +34,7 @@ return {
         mode = { "n", "v" },
         ["<leader>W"] = { name = "+windows" },
         ["<leader>R"] = { name = "REST" },
+        ["<leader>o"] = { name = "Obsidian" },
       },
     },
     keys = {

@@ -16,6 +16,7 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:~/dotfiles/scripts
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -160,3 +161,13 @@ eval "$(fzf --zsh)"
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
 alias cd="z"
+
+# -- Export obsidian vault path --
+export OBSIDIAN_VAULT=$HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/andrepatta
+
+# -- My aliases --
+
+# Obsidian
+alias oo='cd $OBSIDIAN_VAULT'
+alias or='nvim $OBSIDIAN_VAULT/inbox/*.md'
+
