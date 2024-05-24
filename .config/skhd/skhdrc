@@ -1,36 +1,56 @@
 # change window focus within space
-ralt - j : yabai -m window --focus south
-ralt - k : yabai -m window --focus north
-ralt - h : yabai -m window --focus west
-ralt - l : yabai -m window --focus east
+alt - j : yabai -m window --focus south
+alt - k : yabai -m window --focus north
+alt - h : yabai -m window --focus west
+alt - l : yabai -m window --focus east
 
 # rotate layout clockwise
-cmd + ralt - r : yabai -m space --rotate 270
-cmd + ralt - y : yabai -m space --mirror y-axis
-cmd + ralt - x : yabai -m space --mirror x-axis
-cmd + ralt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+ctrl + alt - r : yabai -m space --rotate 270
+ctrl + alt - y : yabai -m space --mirror y-axis
+ctrl + alt - x : yabai -m space --mirror x-axis
+ctrl + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
 
 # maximize a window
-cmd + ralt - m : yabai -m window --toggle zoom-fullscreen
-cmd + ralt - e : yabai -m space --balance
+alt - m : yabai -m window --toggle zoom-fullscreen
+shift + alt - m : yabai -m space --balance
 
 # change layout of desktop
-cmd + ralt - z : yabai -m space --layout bsp
-cmd + ralt - x : yabai -m space --layout float
+shift + alt - z : yabai -m space --layout bsp
+shift + alt - x : yabai -m space --layout float
+shift + alt - c : yabai -m space --layout stack
 
 # swap windows
-cmd + ralt - j : yabai -m window --swap south
-cmd + ralt - k : yabai -m window --swap north
-cmd + ralt - h : yabai -m window --swap west
-cmd + ralt - l : yabai -m window --swap east
+shift + alt - j : yabai -m window --swap south
+shift + alt - k : yabai -m window --swap north
+shift + alt - h : yabai -m window --swap west
+shift + alt - l : yabai -m window --swap east
 
 # move window and split
-ctrl + ralt - j : yabai -m window --warp south
-ctrl + ralt - k : yabai -m window --warp north
-ctrl + ralt - h : yabai -m window --warp west
-ctrl + ralt - l : yabai -m window --warp east
+ctrl + alt - j : yabai -m window --warp south
+ctrl + alt - k : yabai -m window --warp north
+ctrl + alt - h : yabai -m window --warp west
+ctrl + alt - l : yabai -m window --warp east
 
 # stop/start/restart yabai
-ctrl + ralt - q : yabai --stop-service
-ctrl + ralt - s : yabai --start-service
-ctrl + ralt - r : yabai --restart-service
+ctrl + shift + alt - q : yabai --stop-service
+ctrl + shift + alt - s : yabai --start-service
+ctrl + shift + alt - r : yabai --restart-service
+
+# close focused window
+alt - q : yabai -m window --close
+
+# hide focused window
+alt - w : skhd -k "cmd - h"
+
+# cycle through stack windows
+# alt - p : yabai -m window --focus stack.next || yabai -m window --focus south
+# alt - n : yabai -m window --focus stack.prev || yabai -m window --focus north
+
+# forwards
+alt - n : yabai -m window --focus stack.next
+
+# backwards
+alt - p : yabai -m window --focus stack.prev
+
+# go back to previous workspace
+alt - tab : yabai -m window --focus recent

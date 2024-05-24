@@ -20,7 +20,7 @@ yabai -m config mouse_drop_action swap
 # disable specific apps
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
 
-yabai -m config --space 2 layout float
-
-borders active_color=0xffe1e3e4 width=1.0 &
+yabai -m signal --add label="flash_focus" event="window_focused" action="yabai -m window \$YABAI_WINDOW_ID --opacity 0.1 && sleep $(yabai -m config window_opacity_duration) && yabai -m window \$YABAI_WINDOW_ID --opacity 0.0"
+# borders active_color=0xffe1e3e4 width=4.0 &
