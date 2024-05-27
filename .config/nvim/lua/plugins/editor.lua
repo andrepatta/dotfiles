@@ -17,7 +17,6 @@ return {
       -- add tsx and treesitter
       vim.list_extend(opts.ensure_installed, {
         "go",
-        "templ",
         "lua",
         "xml",
         "http",
@@ -88,11 +87,12 @@ return {
         require("copilot_cmp.comparators").prioritize,
       })
 
-      opts.experimental.ghost_text = false
+      -- opts.experimental.ghost_text = false
 
-      -- opts.mapping = vim.tbl_extend("force", opts.mapping, {
-      --   ["<CR>"] = cmp.mapping.confirm({ select = false }),
-      -- })
+      local cmp = require("cmp")
+      opts.mapping = vim.tbl_extend("force", opts.mapping, {
+        ["<CR>"] = cmp.mapping.confirm({ select = false }),
+      })
     end,
   },
 }

@@ -26,3 +26,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd("FocusLost", {
+  desc = "Keep * synced with selection",
+  callback = function()
+    local mode = vim.fn.mode(false)
+    if mode == "v" or mode == "V" or mode == "\22" then
+      vim.fn.setreg("*", vim.fn.getregion(vim.fn.getpos("."), vim.fn.getpos("v"), { type = mode }))
+    end
+  end,
+})
