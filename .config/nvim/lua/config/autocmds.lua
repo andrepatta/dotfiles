@@ -36,3 +36,9 @@ vim.api.nvim_create_autocmd("FocusLost", {
     end
   end,
 })
+
+-- Not the ideal place for this but it's fine.
+-- This enables dap loading config from vscode launch.json
+if vim.fn.filereadable(vim.uv.cwd() .. "/.vscode/launch.json") then
+  require("dap.ext.vscode").load_launchjs()
+end
