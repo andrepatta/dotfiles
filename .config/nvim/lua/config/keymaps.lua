@@ -23,15 +23,16 @@ vim.keymap.del({ "i", "x", "n", "s" }, "<C-s>")
 vim.keymap.del("n", "<leader>`")
 vim.keymap.del("n", "<leader>K")
 
--- NvTerm
--- vim.keymap.set({ "n", "t" }, "<leader>\\", function()
---   require("nvterm.terminal").toggle("float")
--- end, { desc = "NvTerm", remap = true })
+-- Move selected line / block of text in visual mode
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
-local continue = function()
-  if vim.fn.filereadable(".vscode/launch.json") then
-    require("dap.ext.vscode").load_launchjs()
-  end
-  require("dap").continue()
-end
-vim.keymap.set("n", "<leader>dv", continue, { desc = "Run from VSConfig" })
+-- Keep cursor centered when scrolling
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
+
+-- Map enter to ciw in normal mode
+vim.keymap.set("n", "<CR>", "ciw", { noremap = true, silent = true })
+
+-- Split line with X
+vim.keymap.set("n", "X", ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>", { silent = true })
