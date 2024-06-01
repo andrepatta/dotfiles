@@ -9,12 +9,11 @@ padding.y = 10
 dimensions.columns = 150
 dimensions.lines = 85
 decorations = "buttonless"
-opacity = 0.9
+opacity = 0.95
 blur = true
 
 option_as_alt = "Both"
 
 [font]
-# normal.family = "MesloLGS Nerd Font Mono"
 normal.family = "JetBrainsMono Nerd Font"
 size = 18
