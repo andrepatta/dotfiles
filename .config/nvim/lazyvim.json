@@ -1,6 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.editor.trouble-v3",
+    "lazyvim.plugins.extras.coding.copilot-chat",
+    "lazyvim.plugins.extras.editor.illuminate",
     "lazyvim.plugins.extras.lang.markdown",
     "lazyvim.plugins.extras.lang.tailwind",
     "lazyvim.plugins.extras.lang.toml",
@@ -10,5 +11,5 @@
   "news": {
     "NEWS.md": "4964"
   },
-  "version": 5
+  "version": 6
 }
