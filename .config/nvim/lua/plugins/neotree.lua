@@ -4,13 +4,6 @@ return {
     filesystem = {
       filtered_items = {
         visible = true,
-        -- hide_dotfiles = false,
-        -- hide_gitignored = true,
-        -- hide_by_name = {
-        --   ".github",
-        --   ".gitignore",
-        --   "package-lock.json",
-        -- },
         never_show = { ".git" },
       },
       components = {
@@ -27,7 +20,7 @@ return {
 
             if value == path then
               return {
-                text = string.format(" ⥤ %d", i), -- <-- Add your favorite harpoon like arrow here
+                text = string.format(" ⥤ %d", i),
                 highlight = config.highlight or "NeoTreeDirectoryIcon",
               }
             end
@@ -39,7 +32,7 @@ return {
         file = {
           { "icon" },
           { "name", use_git_status_colors = true },
-          { "harpoon_index" }, --> This is what actually adds the component in where you want it
+          { "harpoon_index" },
           { "diagnostics" },
           { "git_status", highlight = "NeoTreeDimText" },
         },
@@ -53,7 +46,7 @@ return {
     },
     default_component_configs = {
       indent = {
-        with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
+        with_expanders = true,
         expander_collapsed = "",
         expander_expanded = "",
         expander_highlight = "NeoTreeExpander",
@@ -64,12 +57,10 @@ return {
       },
       git_status = {
         symbols = {
-          -- Change type
-          added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
-          modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-          deleted = "", -- this can only be used in the git_status source
-          renamed = "➜", -- this can only be used in the git_status source
-          -- Status type
+          added = "",
+          modified = "",
+          deleted = "",
+          renamed = "➜",
           untracked = "◌",
           ignored = "",
           unstaged = "",
