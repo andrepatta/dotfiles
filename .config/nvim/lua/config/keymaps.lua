@@ -31,8 +31,8 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { noremap = true, silent = true })
 
--- Map enter to ciw in normal mode
-vim.keymap.set("n", "<CR>", "ciw", { noremap = true, silent = true })
-
 -- Split line with X
 vim.keymap.set("n", "X", ":keeppatterns substitute/\\s*\\%#\\s*/\\r/e <bar> normal! ==^<cr>", { silent = true })
+
+-- Toggle fold in normal mode
+vim.keymap.set("n", "<TAB>", "za", { noremap = true, silent = true })
