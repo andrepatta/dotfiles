@@ -27,7 +27,9 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
+-- Workaround to get Raycast AI commands to identify selected text in Neovim
 vim.api.nvim_create_autocmd("FocusLost", {
+  group = augroup("copy_selection_on_focus_lost"),
   desc = "Keep * synced with selection",
   callback = function()
     local mode = vim.fn.mode(false)

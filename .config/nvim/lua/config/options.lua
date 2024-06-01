@@ -13,3 +13,5 @@ opt.smartcase = true
 
 -- backspace
 opt.backspace = "indent,eol,start"
+
+vim.o.scrolloff = 8
