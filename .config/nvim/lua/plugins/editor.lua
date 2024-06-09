@@ -5,7 +5,8 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin",
+      colorscheme = "rose-pine-moon",
     },
   },
   --
@@ -32,7 +33,7 @@ return {
       defaults = {
         mode = { "n", "v" },
         ["<leader>W"] = { name = "+windows" },
-        ["<leader>R"] = { name = "REST" },
+        ["<leader>r"] = { name = "REST" },
         ["<leader>o"] = { name = "Obsidian" },
       },
     },
