@@ -13,7 +13,7 @@ newline = true
 type = 'path'
 style = 'plain'
 background = 'transparent'
-foreground = 'blue'
+foreground = 'magenta'
 template = '{{ .Path }}'
 
 [blocks.segments.properties]
