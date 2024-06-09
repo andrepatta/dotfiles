@@ -1,6 +1,6 @@
 # change window focus within space
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
+alt - j : yabai -m window --focus stack.next || yabai -m window --focus south
+alt - k : yabai -m window --focus stack.prev || yabai -m window --focus north
 alt - h : yabai -m window --focus west
 alt - l : yabai -m window --focus east
 
@@ -37,20 +37,10 @@ ctrl + shift + alt - s : yabai --start-service
 ctrl + shift + alt - r : yabai --restart-service
 
 # close focused window
-alt - q : yabai -m window --close
+alt - q : skhd -k "cmd - q"
 
 # hide focused window
 alt - w : skhd -k "cmd - h"
-
-# cycle through stack windows
-# alt - p : yabai -m window --focus stack.next || yabai -m window --focus south
-# alt - n : yabai -m window --focus stack.prev || yabai -m window --focus north
-
-# forwards
-alt - n : yabai -m window --focus stack.next
-
-# backwards
-alt - p : yabai -m window --focus stack.prev
 
 # go back to previous workspace
 alt - tab : yabai -m window --focus recent
