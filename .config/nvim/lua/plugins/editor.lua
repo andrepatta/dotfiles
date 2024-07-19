@@ -6,7 +6,8 @@ return {
     "LazyVim/LazyVim",
     opts = {
       -- colorscheme = "catppuccin",
-      colorscheme = "rose-pine-moon",
+      -- colorscheme = "rose-pine-moon",
+      colorscheme = "tokyonight-night",
     },
   },
   --
@@ -29,29 +30,33 @@ return {
   -- with the active keybindings of the command you started typing.
   {
     "folke/which-key.nvim",
+    event = "VeryLazy",
     opts = {
-      defaults = {
+      spec = {
         mode = { "n", "v" },
         ["<leader>W"] = { name = "+windows" },
         ["<leader>r"] = { name = "REST" },
         ["<leader>o"] = { name = "Obsidian" },
       },
+      icons = {
+        mappings = false,
+      },
     },
-    keys = {
-      { "<leader>w", "<cmd>w<cr><esc>", desc = "Save buffer" },
-    },
+    -- keys = {
+    --   { "<leader>w", "<cmd>w<cr><esc>", desc = "Save buffer" },
+    -- },
   },
   -- add telescope-fzf-native
-  -- {
-  --   "telescope.nvim",
-  --   dependencies = {
-  --     "nvim-telescope/telescope-fzf-native.nvim",
-  --     build = "make",
-  --     config = function()
-  --       require("telescope").load_extension("fzf")
-  --     end,
-  --   },
-  -- },
+  {
+    "telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "make",
+      config = function()
+        require("telescope").load_extension("fzf")
+      end,
+    },
+  },
 
   {
     "hrsh7th/nvim-cmp",
@@ -76,7 +81,7 @@ return {
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       opts.completion = {
-        completeopt = "menu,menuone,noselect,noinsert",
+        completeopt = "menu,menuone,noinsert",
       }
 
       table.insert(opts.sources, 1, {
@@ -89,12 +94,9 @@ return {
         require("copilot_cmp.comparators").prioritize,
       })
 
-      opts.experimental.ghost_text = false
+      opts.experimental.ghost_text = true
 
       local cmp = require("cmp")
-      -- opts.mapping = vim.tbl_extend("force", opts.mapping, {
-      --   ["<CR>"] = cmp.mapping.confirm({ select = false }),
-      -- })
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<CR>"] = cmp.mapping({
           i = function(fallback)
@@ -107,6 +109,41 @@ return {
           s = cmp.mapping.confirm({ select = true }),
           c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
         }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          else
+            fallback()
+          end
+        end),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          else
+            fallback()
+          end
+        end),
+        ["<Down>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          else
+            fallback()
+          end
+        end),
+        ["<Up>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          else
+            fallback()
+          end
+        end),
+        ["<C-l>"] = cmp.mapping(function(fallback)
+          if cmp.visible() and cmp.get_active_entry() then
+            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
       })
     end,
   },

@@ -5,7 +5,9 @@ return {
       enabled = false,
     },
     servers = {
-      templ = {},
+      templ = {
+        filetypes = { "templ" },
+      },
       tailwindcss = {
         filetypes = { "templ", "astro", "javascript", "typescript", "react" },
         init_options = { userLanguages = { templ = "html" } },
