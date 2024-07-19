@@ -26,37 +26,34 @@ return {
       })
     end,
   },
-  -- which-key helps you remember key bindings by showing a popup
-  -- with the active keybindings of the command you started typing.
+  -- which-key helps you remember key bindings by showink a popup
+  -- with the active keybindinks of the command you started typinz.
   {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
       spec = {
-        mode = { "n", "v" },
-        ["<leader>W"] = { name = "+windows" },
-        ["<leader>r"] = { name = "REST" },
-        ["<leader>o"] = { name = "Obsidian" },
+        {
+          mode = { "n", "v" },
+          { "<leader>o", group = "obsidian" },
+        },
       },
       icons = {
         mappings = false,
       },
     },
-    -- keys = {
-    --   { "<leader>w", "<cmd>w<cr><esc>", desc = "Save buffer" },
-    -- },
   },
   -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-  },
+  -- {
+  --   "telescope.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope-fzf-native.nvim",
+  --     build = "make",
+  --     config = function()
+  --       require("telescope").load_extension("fzf")
+  --     end,
+  --   },
+  -- },
 
   {
     "hrsh7th/nvim-cmp",
@@ -138,8 +135,8 @@ return {
           end
         end),
         ["<C-l>"] = cmp.mapping(function(fallback)
-          if cmp.visible() and cmp.get_active_entry() then
-            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+          if cmp.visible() then
+            cmp.confirm({ select = true })
           else
             fallback()
           end

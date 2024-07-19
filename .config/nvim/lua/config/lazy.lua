@@ -12,33 +12,6 @@ require("lazy").setup({
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
 
-    -- copilot
-    -- { import = "lazyvim.plugins.extras.coding.copilot" },
-
-    -- Aerial (symbols outline)
-    { import = "lazyvim.plugins.extras.editor.aerial" },
-
-    -- Harpoon 2.0
-    { import = "lazyvim.plugins.extras.editor.harpoon2" },
-
-    -- leap on steroids
-    { import = "lazyvim.plugins.extras.editor.leap" },
-
-    -- langs
-    { import = "lazyvim.plugins.extras.lang.go" },
-    { import = "lazyvim.plugins.extras.lang.json" },
-    { import = "lazyvim.plugins.extras.lang.docker" },
-
-    -- debugger
-    { import = "lazyvim.plugins.extras.dap.core" },
-
-    -- better yank/paste
-    { import = "lazyvim.plugins.extras.coding.yanky" },
-
-    -- import any extras modules here
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    -- import/override with your plugins
     { import = "plugins" },
   },
   defaults = {
@@ -50,7 +23,7 @@ require("lazy").setup({
     version = false, -- always use the latest git commit
     -- version = "*", -- try installing the latest stable version for plugins that support semver
   },
-  install = { colorscheme = { "catppuccin" } },
+  install = { colorscheme = { "tokyonight" } },
   checker = { enabled = true }, -- automatically check for plugin updates
   performance = {
     rtp = {
