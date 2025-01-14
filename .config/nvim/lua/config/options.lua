@@ -15,3 +15,6 @@ opt.smartcase = true
 opt.backspace = "indent,eol,start"
 
 vim.o.scrolloff = 8
+
+-- disable snacks animations
+vim.g.snacks_animate = false
