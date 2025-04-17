@@ -9,13 +9,7 @@ export PATH=~/.npm-global/bin:$PATH
 export PATH="/opt/homebrew/opt/node/bin:$PATH"
 export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:~/dotfiles/scripts
 
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-
-export ANDROID_HOME=/Users/$USER/Library/Android/sdk
-export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -110,7 +104,10 @@ zinit light-mode for \
 # Init prompt
 # eval "$(starship init zsh)"
 # export STARSHIP_CONFIG=~/.config/starship/starship.toml
-eval "$(oh-my-posh init zsh --config $HOME/.config/posh/posh.toml)"
+eval "$(oh-my-posh init zsh --config $HOME/.config/posh/theme.json)"
+# eval "$(oh-my-posh init zsh --config $HOME/.config/posh/posh.toml)"
+# eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/maxstolly/rose-pine.omp/main/rose-pine.omp.json')"
+# eval "$(oh-my-posh init zsh)"
 
 # Load zsh-completions
 zinit light zsh-users/zsh-completions
@@ -162,10 +159,6 @@ alias cd="z"
 export OBSIDIAN_VAULT=$HOME/Library/Mobile\ Documents/iCloud~md~obsidian/Documents/andrepatta
 
 # -- My aliases --
-
-# Obsidian
-alias oo='cd $OBSIDIAN_VAULT'
-alias or='nvim $OBSIDIAN_VAULT/inbox/*.md'
 
 # Catppuccin fzf theme
 export FZF_DEFAULT_OPTS=" \

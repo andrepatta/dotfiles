@@ -40,15 +40,38 @@ return {
     "folke/which-key.nvim",
     event = "VeryLazy",
     opts = {
-      spec = {
-        {
-          mode = { "n", "v" },
-          { "<leader>o", group = "obsidian" },
-          { "<leader>a", group = "avante" },
-        },
-      },
+      -- spec = {
+      --   {
+      --     mode = { "n", "v" },
+      --     { "<leader>a", group = "avante" },
+      --   },
+      -- },
       icons = {
         mappings = false,
+      },
+    },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      picker = {
+        sources = {
+          explorer = {
+            hidden = true,
+            ignored = true,
+            exclude = { "node_modules", ".git", ".next" },
+          },
+          files = {
+            hidden = true,
+            ignored = true,
+            exclude = { "node_modules", ".git", ".next" },
+          },
+          grep = {
+            hidden = true,
+            ignored = true,
+            exclude = { "node_modules", ".git", ".next" },
+          },
+        },
       },
     },
   },
