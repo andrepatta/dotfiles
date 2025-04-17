@@ -46,8 +46,17 @@ return {
       --     { "<leader>a", group = "avante" },
       --   },
       -- },
+      preset = "classic",
       icons = {
         mappings = false,
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      inlay_hints = {
+        enabled = false,
       },
     },
   },
